@@ -1,0 +1,9 @@
+__pycache__/
+*.npy
+*.zip
+pinn_*.pth
+model1_gnn.pth
+# Keep model2_transformer.pth since backend.py depends on it
+# Keep train.csv, test.csv if small, but let's ignore them for a clean repo
+*.csv
+.ipynb_checkpoints/

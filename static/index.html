@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polymer Prediction Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Premium Animated Background -->
+    <div class="bg-grid"></div>
+    <div class="glow-orb top-left"></div>
+    <div class="glow-orb bottom-right"></div>
+
+    <div class="dashboard-wrapper">
+        <!-- Sidebar / Header Area -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="url(#gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#3b82f6" />
+                                <stop offset="100%" stop-color="#10b981" />
+                            </linearGradient>
+                        </defs>
+                        <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
+                        <line x1="12" y1="22" x2="12" y2="12"></line>
+                        <line x1="22" y1="8.5" x2="12" y2="12"></line>
+                        <line x1="2" y1="8.5" x2="12" y2="12"></line>
+                    </svg>
+                </div>
+                <h1>Polymer AI</h1>
+            </div>
+            
+            <div class="input-panel">
+                <p class="panel-desc">Enter a molecular sequence (SMILES) to instantly predict its physicochemical properties.</p>
+                <div class="input-container">
+                    <label for="smiles-input">SMILES Sequence</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="smiles-input" placeholder="e.g. *CC(*)c1ccccc1..." autocomplete="off">
+                        <button id="predict-btn">
+                            <span>Analyze</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div id="error-msg" class="error-hidden">Invalid SMILES sequence</div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="content-area">
+            <div class="content-header">
+                <h2>Analysis Dashboard</h2>
+            </div>
+
+            <!-- Pre-loader -->
+            <section id="results-skeleton" class="results-grid hidden">
+                <div class="stat-card skeleton"></div>
+                <div class="stat-card skeleton"></div>
+                <div class="stat-card skeleton"></div>
+                <div class="stat-card skeleton"></div>
+                <div class="stat-card skeleton"></div>
+            </section>
+
+            <!-- Results -->
+            <section id="results-dashboard" class="results-grid hidden">
+                <!-- Stat Cards Injected via JS -->
+            </section>
+
+            <!-- Visualizations Array -->
+            <section id="visualization-dashboard" class="vis-layout hidden">
+                <div class="vis-panel topology-panel">
+                    <div class="panel-header">
+                        <h3>Molecular Topology</h3>
+                        <span class="badge">RDKit Engine</span>
+                    </div>
+                    <div id="polymer-svg-container" class="svg-canvas"></div>
+                </div>
+                
+                <div class="vis-panel chart-panel">
+                    <div class="panel-header">
+                        <h3>Property Matrix</h3>
+                        <span class="badge">Normalized</span>
+                    </div>
+                    <div class="chart-canvas">
+                        <canvas id="radarChart"></canvas>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+</html>
