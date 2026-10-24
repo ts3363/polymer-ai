@@ -383,6 +383,82 @@ button:hover {
     align-items: center;
 }
 
+/* --- UI/UX Enhancements --- */
+.input-wrapper { position: relative; }
+.clear-btn { 
+    position: absolute; right: 1rem; top: 1rem; background: none; border: none; 
+    color: var(--text-secondary); cursor: pointer; padding: 0; box-shadow: none;
+    display: flex; align-items: center; justify-content: center;
+}
+.clear-btn:hover { color: var(--text-primary); transform: scale(1.1); box-shadow: none; }
+.input-error { border-color: var(--error) !important; box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important; }
+
+/* Button Spinner */
+.spinner {
+    width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 50%; border-top-color: #fff; animation: spin 0.8s linear infinite;
+    display: inline-block;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Cards Layout & Tooltips */
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; }
+.card-title-wrap { display: flex; align-items: center; gap: 0.5rem; }
+.tooltip-icon {
+    width: 14px; height: 14px; border-radius: 50%; background: rgba(255,255,255,0.1);
+    color: var(--text-secondary); font-size: 10px; font-weight: bold;
+    display: flex; justify-content: center; align-items: center; cursor: help; position: relative;
+}
+.tooltip-text {
+    visibility: hidden; width: max-content; max-width: 200px;
+    background-color: var(--bg-base); color: #fff; text-align: center;
+    border-radius: 6px; padding: 0.5rem; position: absolute;
+    z-index: 100; bottom: 150%; left: 50%; transform: translateX(-50%);
+    font-size: 0.8rem; font-weight: 400; font-family: 'Outfit';
+    border: 1px solid var(--border-subtle); opacity: 0; transition: opacity 0.3s;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5); pointer-events: none;
+}
+.tooltip-icon:hover .tooltip-text { visibility: visible; opacity: 1; }
+
+/* Card Values & Accuracy */
+.stat-card { display: flex; flex-direction: column; }
+.dim-decimal { color: rgba(255,255,255,0.4); font-weight: 400; font-size: 0.85em; }
+.card-error { font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 1rem; }
+
+/* Progress Gauge */
+.progress-bar-bg { width: 100%; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; margin-top: auto; }
+.progress-bar-fill { height: 100%; background: var(--card-glow, var(--accent-blue)); border-radius: 2px; transition: width 1s cubic-bezier(0.16, 1, 0.3, 1); }
+
+/* Copy Button */
+.copy-btn {
+    background: none; border: none; color: var(--text-secondary); cursor: pointer;
+    padding: 0; display: flex; align-items: center; opacity: 0; transition: all 0.2s;
+    box-shadow: none;
+}
+.stat-card:hover .copy-btn { opacity: 1; }
+.copy-btn:hover { color: var(--text-primary); transform: scale(1.1); box-shadow: none; }
+
+/* Export Card */
+.export-card {
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    text-align: center; border: 1px dashed rgba(255,255,255,0.2); background: rgba(15, 23, 42, 0.3);
+    cursor: pointer; padding: 2rem 1.5rem;
+}
+.export-card:hover { background: rgba(15, 23, 42, 0.6); border-color: var(--border-glow); }
+.export-card::before { display: none; }
+.export-content { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; color: var(--text-secondary); }
+.export-content svg { color: var(--accent-emerald); margin-bottom: 0.25rem; }
+.export-content h3 { color: #fff; font-size: 1.15rem; font-weight: 600; margin: 0; }
+.export-content p { font-size: 0.85rem; margin: 0; }
+.export-btn {
+    background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald);
+    border: 1px solid rgba(16, 185, 129, 0.4); padding: 0.6rem 1rem;
+    font-size: 0.9rem; border-radius: 8px; box-shadow: none; width: 100%; margin-top: 0.75rem;
+}
+.export-btn:hover { background: var(--accent-emerald); color: var(--bg-base); transform: translateY(-2px); }
+
+/* Responsive Dashboard Adjustment */
+
 /* Responsive */
 @media (max-width: 900px) {
     .dashboard-wrapper { grid-template-columns: 1fr; }
