@@ -1,3 +1,13 @@
+---
+title: Polymer AI
+emoji: 🧬
+colorFrom: blue
+colorTo: green
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 # Polymer AI: Multi-Task Transformer for Polymer Property Prediction
 
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://www.python.org/)
