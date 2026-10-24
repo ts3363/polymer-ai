@@ -5,8 +5,21 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.103%2B-009688.svg)](https://fastapi.tiangolo.com/)
 [![RDKit](https://img.shields.io/badge/Chemistry-RDKit-green.svg)](https://www.rdkit.org/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/ts3363/polymer-ai)
 
 **Polymer AI** is a full-stack, deep learning platform engineered to predict macroscopic physicochemical properties of polymers directly from their microscopic repeating-unit SMILES representations. Combining an attention-based Transformer with 2D/3D topological chemoinformatics (RDKit) and a cyberpunk scientific web dashboard, Polymer AI accelerates polymer discovery and materials informatics.
+
+---
+
+## ⚡ 1-Click Live Deployment
+
+Deploy your own live instance of Polymer AI in under 2 minutes:
+
+| Platform | Deployment Type | Resources & Tier | One-Click Link |
+| :--- | :--- | :--- | :--- |
+| **Render** | Web Service (Automated) | Free Tier (512MB RAM) | [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/ts3363/polymer-ai) |
+| **Hugging Face Spaces** | Docker / Space | Free Tier (16 GB RAM, 2 vCPU) | [Create HF Space](https://huggingface.co/new-space) (Import `ts3363/polymer-ai`) |
+| **Railway / Koyeb** | Docker / Container | Free / Standard | Connect GitHub repository `polymer-ai` |
 
 ---
 

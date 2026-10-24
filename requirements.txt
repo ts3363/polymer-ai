@@ -1,6 +1,7 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
 fastapi==0.103.1
 uvicorn==0.23.2
-torch
 rdkit
 pandas
 scikit-learn
